@@ -45,22 +45,73 @@ fun main(args: Array<String>){
 
     val vida = arregloCumpleanos.map { it*.8 }.filter { it>18 }.fold(100.00,{acc,d->acc-d})
 
-    println(vida)
+    //println(vida)
+/*
+    val nuevoNumeroUno=SumarDosNumerosDos(1,1)
+    val nuevoNumeroDos=SumarDosNumerosDos(null,1)
+    val nuevoNumeroTres=SumarDosNumerosDos(1,null)
+    val nuevoNumeroCuatro=SumarDosNumerosDos(null,null)*/
+/*
+    println(SumarDosNumerosDos.arregloNumero)
+    SumarDosNumerosDos.agregarNumero(2)
+    println(SumarDosNumerosDos.arregloNumero)
+    SumarDosNumerosDos.eliminaNumero(1)
+    println(SumarDosNumerosDos.arregloNumero)*/
 
+    val nombre:String?=null
+    println(nombre?.length)
 
 }
 
 abstract class Numeros(//val nuevosNumeros = Numeros(1,2)
-         val numeroUno:Int,
-         val numeroDos:Int
+         var numeroUno:Int,
+         var numeroDos:Int
 ){
 }
 
 class Suma(
-        private var uno:Int,
-        private var dos:Int
+        protected var uno:Int,
+        protected var dos:Int
 ):Numeros(uno,dos){
      fun suma():Int{
         return this.numeroUno+this.numeroDos
+    }
+}
+class SumarDosNumerosDos(
+        uno: Int,
+        dos: Int
+) : Numeros(uno, dos) {
+    init {
+        println("Init")
+    }
+    constructor(uno: Int?, dos: Int) : this(
+            if (uno == null) 0 else uno,dos
+    ) {
+        println("Hola 1")
+    }
+
+    constructor(uno: Int, dos: Int?) : this(
+            uno,
+            if (dos == null) 0 else dos
+    ) {
+        println("Hola 2")
+    }
+
+    constructor(uno: Int?, dos: Int?) : this(
+            if (uno == null) 0 else uno,
+            if (dos == null) 0 else dos
+    ) {
+        println("Hola 3")
+    }
+
+    companion object{
+        val arregloNumero = arrayListOf(1,2,3,4)
+
+        fun agregarNumero(nuevoNumeros: Int){
+            this.arregloNumero.add(nuevoNumeros)
+        }
+        fun eliminaNumero(posisionNumero: Int){
+            this.arregloNumero.add(posisionNumero)
+        }
     }
 }
