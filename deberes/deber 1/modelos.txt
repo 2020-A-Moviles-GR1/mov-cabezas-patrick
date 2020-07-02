@@ -1,0 +1,10 @@
+audi|1|300.0|true|BMW|
+f150|5|300.0|false|ford|
+auto|6|30000.0|false|chivy|
+BMW|1|300.0|true|BMW|
+f150|5|300.0|false|ford|
+auto|6|30000.0|false|chivy|
+BMW|1|300.0|true|BMW|
+f150|5|300.0|false|ford|
+auto|6|30000.0|false|chivy|
+BMW|27777|2000.1|false|BMW|
