@@ -1,10 +1,4 @@
-audi|1|300.0|true|BMW|
-f150|5|300.0|false|ford|
-auto|6|30000.0|false|chivy|
-BMW|1|300.0|true|BMW|
-f150|5|300.0|false|ford|
-auto|6|30000.0|false|chivy|
-BMW|1|300.0|true|BMW|
-f150|5|300.0|false|ford|
-auto|6|30000.0|false|chivy|
-BMW|27777|2000.1|false|BMW|
+a2|2020|120.0|true|nfd|
+a5|2020|120.0|true|fsd|
+a7|2020|120.0|true|fsd|
+se|2020|1000.0|true|apple|
