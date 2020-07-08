@@ -1,4 +1,0 @@
-a2|2020|120.0|true|nfd|
-a5|2020|120.0|true|fsd|
-a7|2020|120.0|true|fsd|
-se|2020|1000.0|true|apple|
