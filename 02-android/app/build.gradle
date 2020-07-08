@@ -4,6 +4,9 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> desarrollo
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
 
@@ -11,6 +14,8 @@ android {
         applicationId "com.example.app"
         minSdkVersion 23
         targetSdkVersion 30
+<<<<<<< HEAD
+=======
 =======
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -19,6 +24,7 @@ android {
         applicationId "com.example.moviles"
         minSdkVersion 23
         targetSdkVersion 29
+>>>>>>> desarrollo
 >>>>>>> desarrollo
         versionCode 1
         versionName "1.0"
@@ -34,6 +40,8 @@ android {
     }
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -41,6 +49,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+>>>>>>> desarrollo
 >>>>>>> desarrollo
 }
 
@@ -52,12 +61,18 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 =======
+<<<<<<< HEAD
+    implementation 'androidx.core:core-ktx:1.3.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+=======
     implementation 'androidx.core:core-ktx:1.1.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
+>>>>>>> desarrollo
 >>>>>>> desarrollo
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
