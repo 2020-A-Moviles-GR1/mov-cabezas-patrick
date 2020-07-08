@@ -1,6 +1,12 @@
 include ':app'
 <<<<<<< HEAD
+<<<<<<< HEAD
 rootProject.name = "Moviles"
 =======
 rootProject.name = "App"
+=======
+rootProject.name = "App"
+=======
+rootProject.name = "Moviles"
+>>>>>>> desarrollo
 >>>>>>> desarrollo

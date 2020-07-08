@@ -23,11 +23,11 @@ class Marca(
     }
 }
 class Modelo(
-        var nombre:String,
-        var anio_lanzamiento:Int,
-        var precio:Float,
-        var disponible:Boolean,//estado
-        var marca:String
+    var nombre:String,
+    var anio_lanzamiento:Int,
+    var precio:Float,
+    var disponible:Boolean,//estado
+    var marca:String
 ){
     override fun toString(): String {
         return "Modelo(Nombre='$nombre', Año Lanzamiento=$anio_lanzamiento, Precio=$precio, Disponible=$disponible, Marca='$marca')"
@@ -175,8 +175,8 @@ fun eliminarModelos(modelos : ArrayList<Modelo>){
 }
 
 fun eliminarModeloMarca(marca: String,modelos: ArrayList<Modelo>){
-modelos.removeIf { iteracion : Modelo ->
-    iteracion.marca==marca }
+    modelos.removeIf { iteracion : Modelo ->
+        iteracion.marca==marca }
 }
 
 fun menuPrincipal(marcas : ArrayList<Marca>, modelos : ArrayList<Modelo>){
