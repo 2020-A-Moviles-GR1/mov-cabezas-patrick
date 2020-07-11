@@ -9,7 +9,6 @@ fun main(args:Array<String>) {
     leerModelos(modelos)
     while (true)
         menuPrincipal(marcas,modelos)
-
 }
 class Marca(
     var nombre:String,
@@ -224,7 +223,7 @@ fun menuModelos(marcas : ArrayList<Marca>, modelos : ArrayList<Modelo>) : Boolea
     var estado=true
     var texto:String
     texto ="--------------------------------------"+"\n"
-    texto+="-       Menu Modelos Celulare        -"+"\n"
+    texto+="-       Menu Modelos Celulares       -"+"\n"
     texto+="- Registro de Modelos de Celulare    -"+"\n"
     texto+="- 1. Ingresar una nueva Modelo       -"+"\n"
     texto+="- 2. Mostrar las Modelo registradas  -"+"\n"
