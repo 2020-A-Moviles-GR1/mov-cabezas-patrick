@@ -1,2 +1,3 @@
-nokia|finlandia|1900|true|1.2E10|
-apple|usa|1970|false|1.0E8|
+nokia|finlandia|1950|false|1.2E8|
+xiaomi|china|2000|true|121323.0|
+apple|usa|1980|false|4.0E7|
