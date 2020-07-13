@@ -96,7 +96,6 @@ public class MenuMarcas {
         txt_valor_marca.setText("");
         sucursalLocalCheckBox.setSelected(false);
     }
-
 }
 
 
