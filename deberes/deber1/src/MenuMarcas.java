@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class Main {
+public class MenuMarcas {
     private JTextField txt_texto;
     private JButton btn_agregar;
     JPanel Panel;
@@ -14,7 +14,6 @@ public class Main {
     private JTextField txt_valor_marca;
     private JButton actualizarButton;
     private JButton salirButton;
-    JTable table1=createTable();
     private JButton eliminarButton;
     private JButton menuModelosButton;
     private JButton agregarButton;
@@ -24,13 +23,7 @@ public class Main {
     ArrayList marcas = new ArrayList<Marca>();
     ArrayList modelos = new ArrayList<Modelo>();
 
-
-    public void setListas(){
-        AppKt.leerMarcas(this.marcas);
-        AppKt.leerModelos(this.modelos);
-    }
-
-    public Main() {
+    public MenuMarcas() {
         salirButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -42,7 +35,14 @@ public class Main {
         agregarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                agragarMarca();
+                Marca marca = new Marca(
+                        txt_nombre_marca.getText()
+                        ,txt_pais_marca.getText()
+                        ,Integer.parseInt( txt_anio_marca.getText())
+                        ,sucursalLocalCheckBox.isSelected()
+                        ,Float.parseFloat( txt_valor_marca.getText())
+                );
+                AppKt.agragaMarca(marcas,marca);
                 actualizarDatosMarcas();
             }
         });
@@ -67,7 +67,7 @@ public class Main {
         eliminarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                eliminaMarca();
+                AppKt.eliminarMarca(marcas,modelos,txt_nombre_marca.getText());
                 actualizarDatosMarcas();
             }
         });
@@ -83,7 +83,10 @@ public class Main {
         setListas();
         actualizarDatosMarcas();
     }
-
+    public void setListas(){
+        AppKt.leerMarcas(this.marcas);
+        AppKt.leerModelos(this.modelos);
+    }
     public void actualizarDatosMarcas(){
         String texto=AppKt.mostrarMarcas(marcas);
         textArea1.setText(texto);
@@ -92,51 +95,6 @@ public class Main {
         txt_pais_marca.setText("");
         txt_valor_marca.setText("");
         sucursalLocalCheckBox.setSelected(false);
-    }
-
-    public JPanel getPanel() {
-        return Panel;
-    }
-    public void agragarMarca(){
-        Marca marca = new Marca(
-                txt_nombre_marca.getText()
-                ,txt_pais_marca.getText()
-                ,Integer.parseInt( txt_anio_marca.getText())
-                ,sucursalLocalCheckBox.isSelected()
-                ,Float.parseFloat( txt_valor_marca.getText())
-        );
-        AppKt.agragaMarca(marcas,marca);
-    }
-    public void eliminaMarca(){
-        AppKt.eliminarMarca(marcas,modelos,txt_nombre_marca.getText());
-    }
-
-
-    public static JTable createTable(){
-        String[] columnNames = {"First Name", "Last Name"};
-        Object[][] data = {{"Kathy", "Smith"},{"John", "Doe"}};
-        JTable table = new JTable(data, columnNames);
-        table.setFillsViewportHeight(true);
-        return table;
-    }
-
-
-    public class TableExample {
-        JFrame f;
-        TableExample(){
-            f=new JFrame();
-            String data[][]={ {"101","Amit","670000"},
-                    {"102","Jai","780000"},
-                    {"101","Sachin","700000"}};
-            String column[]={"ID","NAME","SALARY"};
-            JTable jt=new JTable(data,column);
-            jt.setBounds(30,40,200,300);
-            JScrollPane sp=new JScrollPane(jt);
-
-            f.add(sp);
-            f.setSize(300,400);
-            f.setVisible(true);
-        }
     }
 }
 

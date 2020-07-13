@@ -139,7 +139,7 @@ fun main() {
 }
 fun abrirMenuMarcas(){
     val frame = JFrame("Main")
-    frame.contentPane = Main().Panel
+    frame.contentPane = MenuMarcas().Panel
     frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
     frame.pack()
     frame.isVisible = true
