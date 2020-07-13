@@ -1,2 +1,1 @@
-mi10|2020|900.0|true|xiaomi|
-iphome10|2020|2000.0|true|apple|
+mi10|2020|1000.0|true|xiaomi|
