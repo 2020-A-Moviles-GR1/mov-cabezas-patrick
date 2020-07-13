@@ -102,7 +102,10 @@ fun eliminarModelos(modelos : ArrayList<Modelo>,nombre:String){
     val resultado=modelos.removeIf { iteracion : Modelo ->
         iteracion.nombre==nombre
     }
-    JOptionPane.showMessageDialog(frameMenuModelos,"No existe el Modelo")
+    if(!resultado){
+        JOptionPane.showMessageDialog(frameMenuModelos,"No existe el Modelo")
+    }
+
 }
 
 // !!!!!!!!!!!!!!!!!!!!! Archivos  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
