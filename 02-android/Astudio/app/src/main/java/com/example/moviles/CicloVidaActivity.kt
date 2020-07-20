@@ -9,6 +9,12 @@ class CicloVidaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ciclo_vida)
+
+
+        numActual = ServicioBDDMemoria.numero
+        tv_numero.text=numActual.toString()
+
+
         btn_anadir.setOnClickListener({
             sumaNumero()
         })
@@ -18,6 +24,7 @@ class CicloVidaActivity : AppCompatActivity() {
 
     fun sumaNumero(){
         numActual=numActual+1
+        ServicioBDDMemoria.anadirNumero()
         tv_numero.text=numActual.toString()
     }
 
@@ -72,4 +79,5 @@ class CicloVidaActivity : AppCompatActivity() {
             this.numActual = valorRecuperado
             tv_numero.text = this.numActual.toString()
         }
-}}
+    }
+}
