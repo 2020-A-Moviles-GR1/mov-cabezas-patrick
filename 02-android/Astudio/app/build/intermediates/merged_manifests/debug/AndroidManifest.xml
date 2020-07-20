@@ -19,6 +19,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.moviles.IntentEnviaParametros" />
+        <activity android:name="com.example.moviles.BListViewActivity" />
         <activity android:name="com.example.moviles.CicloVidaActivity" />
         <activity android:name="com.example.moviles.MainActivity" >
             <intent-filter>

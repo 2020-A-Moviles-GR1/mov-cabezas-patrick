@@ -17,12 +17,28 @@ class MainActivity : AppCompatActivity() {
         btn_ciclo_vida.setOnClickListener({
             irCicloVida()
         })
+        btn_List_view.setOnClickListener({
+            irListView()
+        })
+        btn_intent_respuesta.setOnClickListener({
+            irIntentRespuesta()
+        })
     }
 
 fun irCicloVida(){
     var intentExplicito =Intent(this, CicloVidaActivity::class.java)
     this.startActivity(intentExplicito)
 }
+
+    fun irIntentRespuesta(){
+        var intentExplicito =Intent(this, IntentEnviaParametros::class.java)
+        this.startActivity(intentExplicito)
+    }
+
+    fun irListView(){
+        var intentExplicito =Intent(this, BListViewActivity::class.java)
+        this.startActivity(intentExplicito)
+    }
 
     override fun onStart() {
         super.onStart()
