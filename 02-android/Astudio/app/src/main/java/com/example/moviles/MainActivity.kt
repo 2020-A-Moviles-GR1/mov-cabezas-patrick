@@ -23,21 +23,29 @@ class MainActivity : AppCompatActivity() {
         btn_intent_respuesta.setOnClickListener({
             irIntentRespuesta()
         })
+        btn_intent_implicito.setOnClickListener({
+            irImplicito()
+        })
     }
 
-fun irCicloVida(){
-    var intentExplicito =Intent(this, CicloVidaActivity::class.java)
-    this.startActivity(intentExplicito)
-}
+    fun irCicloVida(){
+        var intentExplicito =Intent(this, CicloVidaActivity::class.java)
+        this.startActivity(intentExplicito)
+    }
 
     fun irIntentRespuesta(){
         var intentExplicito =Intent(this, IntentEnviaParametros::class.java)
+        intentExplicito.putExtra("numero",2)
         this.startActivity(intentExplicito)
     }
 
     fun irListView(){
         var intentExplicito =Intent(this, BListViewActivity::class.java)
         this.startActivity(intentExplicito)
+    }
+    fun irImplicito(){
+//        var intentExplicito =Intent(this, BListViewActivity::class.java)
+//        this.startActivity(intentExplicito)
     }
 
     override fun onStart() {
