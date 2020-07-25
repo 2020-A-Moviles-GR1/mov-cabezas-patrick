@@ -750,6 +750,9 @@ id btn_ciclo_vida
 id btn_devolver_respuesta
 id btn_intent_implicito
 id btn_intent_respuesta
+id btn_resp_aceptar
+id btn_resp_cancelar
+id btn_resp_propia
 id button
 id buttonPanel
 id center_vertical
