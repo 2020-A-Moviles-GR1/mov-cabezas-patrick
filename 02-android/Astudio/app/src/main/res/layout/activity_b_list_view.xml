@@ -8,8 +8,8 @@
 
     <ListView
         android:id="@+id/lv_numeros"
-        android:layout_width="377dp"
-        android:layout_height="530dp"
+        android:layout_width="372dp"
+        android:layout_height="565dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_actualiza"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.461"

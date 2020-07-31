@@ -30,7 +30,7 @@ class BListViewActivity : AppCompatActivity() {
             parent,view,position,id->
                 Log.i("List-view","Position $position")
         }
-            btn_actualiza.setOnClickListener({
+        btn_actualiza.setOnClickListener({
             mostrar_actulizados(listEntrenadores,adaptador)
         })
     }
