@@ -10,16 +10,17 @@
         android:id="@+id/textView2"
         android:layout_width="135dp"
         android:layout_height="27dp"
-        android:text="Menu Marcas"
+        android:text="Menú Marcas"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txt_nombre"
-        android:layout_width="294dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="2dp"
         android:ems="10"
         android:hint="Nombre"
         android:inputType="textPersonName"
@@ -30,10 +31,10 @@
 
     <EditText
         android:id="@+id/txt_pais_origen"
-        android:layout_width="294dp"
-        android:layout_height="43dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
         android:ems="10"
-        android:hint="Pais Origen"
+        android:hint="País Origen"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/txt_nombre"
         app:layout_constraintHorizontal_bias="0.0"
@@ -42,9 +43,8 @@
 
     <CheckBox
         android:id="@+id/ch_sucursal_local"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
         android:text="Sucursal Local"
         app:layout_constraintEnd_toEndOf="@+id/txt_valor_marca"
         app:layout_constraintHorizontal_bias="0.492"
@@ -53,7 +53,7 @@
 
     <EditText
         android:id="@+id/txt_valor_marca"
-        android:layout_width="293dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:ems="10"
         android:hint="Valor de la Marca"
@@ -65,57 +65,56 @@
 
     <Button
         android:id="@+id/btn_agregar"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
         android:text="Agregar"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_actualizar"
-        app:layout_constraintEnd_toStartOf="@+id/btn_actualizar"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txt_valor_marca"
+        app:layout_constraintEnd_toEndOf="@+id/ch_sucursal_local"
+        app:layout_constraintStart_toStartOf="@+id/ch_sucursal_local"
         app:layout_constraintTop_toBottomOf="@+id/ch_sucursal_local" />
 
     <Button
         android:id="@+id/btn_actualizar"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
         android:text="Actualizar"
-        app:layout_constraintEnd_toEndOf="@+id/txt_valor_marca"
-        app:layout_constraintTop_toBottomOf="@+id/ch_sucursal_local" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_agregar"
+        app:layout_constraintStart_toStartOf="@+id/btn_agregar"
+        app:layout_constraintTop_toBottomOf="@+id/btn_agregar" />
 
     <Button
         android:id="@+id/btn_eliminar"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
         android:text="Eliminar"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_limpiar"
         app:layout_constraintEnd_toEndOf="@+id/btn_actualizar"
         app:layout_constraintStart_toStartOf="@+id/btn_actualizar"
         app:layout_constraintTop_toBottomOf="@+id/btn_actualizar" />
 
     <Button
         android:id="@+id/btn_limpiar"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
         android:text="Limpiar"
-        app:layout_constraintEnd_toEndOf="@+id/btn_agregar"
-        app:layout_constraintStart_toStartOf="@+id/btn_agregar"
-        app:layout_constraintTop_toBottomOf="@+id/btn_agregar" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_eliminar"
+        app:layout_constraintStart_toStartOf="@+id/btn_eliminar"
+        app:layout_constraintTop_toBottomOf="@+id/btn_eliminar" />
 
     <ListView
         android:id="@+id/lv_marcas"
         android:layout_width="400dp"
-        android:layout_height="295dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btn_eliminar"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toStartOf="@+id/btn_limpiar" />
+        android:layout_height="160dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_limpiar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btn_limpiar"
+        app:layout_constraintTop_toBottomOf="@+id/btn_limpiar" />
 
     <EditText
         android:id="@+id/txt_anio_creacion"
-        android:layout_width="294dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:ems="10"
-        android:hint="Anio Creacion"
+        android:hint="Año Creación"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="@+id/txt_pais_origen"
         app:layout_constraintStart_toStartOf="@+id/txt_pais_origen"

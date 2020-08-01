@@ -9,9 +9,8 @@
 
     <CheckBox
         android:id="@+id/ch_disponible"
-        android:layout_width="155dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
         android:text="Disponible"
         app:layout_constraintEnd_toEndOf="@+id/txt_nomre_marca"
         app:layout_constraintHorizontal_bias="0.494"
@@ -22,15 +21,17 @@
         android:id="@+id/txt_menu_modelos"
         android:layout_width="133dp"
         android:layout_height="26dp"
-        android:text="Menu Modelos"
+        android:text="Menú Modelos"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txt_nombre_m"
-        android:layout_width="325dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
+        android:layout_marginTop="2dp"
         android:ems="10"
         android:hint="Nombre"
         android:inputType="textPersonName"
@@ -40,8 +41,8 @@
 
     <EditText
         android:id="@+id/txt_nomre_marca"
-        android:layout_width="324dp"
-        android:layout_height="39dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:hint="Nombre de la Marca"
         android:inputType="textPersonName"
@@ -51,9 +52,8 @@
 
     <Button
         android:id="@+id/btn_agregar_m"
-        android:layout_width="269dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
         android:text="Agregar"
         app:layout_constraintEnd_toEndOf="@+id/ch_disponible"
         app:layout_constraintHorizontal_bias="0.51"
@@ -62,8 +62,8 @@
 
     <Button
         android:id="@+id/btn_actualizar_m"
-        android:layout_width="269dp"
-        android:layout_height="40dp"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
         android:text="Actualizar"
         app:layout_constraintEnd_toEndOf="@+id/btn_agregar_m"
         app:layout_constraintStart_toStartOf="@+id/btn_agregar_m"
@@ -71,8 +71,8 @@
 
     <Button
         android:id="@+id/btn_eliminar_m"
-        android:layout_width="269dp"
-        android:layout_height="38dp"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
         android:text="Eliminar"
         app:layout_constraintEnd_toEndOf="@+id/btn_actualizar_m"
         app:layout_constraintStart_toStartOf="@+id/btn_actualizar_m"
@@ -80,21 +80,20 @@
 
     <ListView
         android:id="@+id/lv_modelos"
-        android:layout_width="397dp"
-        android:layout_height="322dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="400dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="2dp"
         app:layout_constraintEnd_toEndOf="@+id/btn_limpiar_m"
-        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/btn_limpiar_m"
         app:layout_constraintTop_toBottomOf="@+id/btn_limpiar_m"></ListView>
 
     <EditText
         android:id="@+id/txt_anio_m"
-        android:layout_width="325dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Anio Lanzamiento"
+        android:hint="Año Lanzamiento"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="@+id/txt_nombre_m"
         app:layout_constraintHorizontal_bias="0.0"
@@ -103,8 +102,8 @@
 
     <EditText
         android:id="@+id/txt_precio_m"
-        android:layout_width="325dp"
-        android:layout_height="42dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:hint="Precio"
         android:inputType="number"
@@ -114,8 +113,8 @@
 
     <Button
         android:id="@+id/btn_limpiar_m"
-        android:layout_width="269dp"
-        android:layout_height="38dp"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
         android:text="Limpiar"
         app:layout_constraintEnd_toEndOf="@+id/btn_eliminar_m"
         app:layout_constraintStart_toStartOf="@+id/btn_eliminar_m"
