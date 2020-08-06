@@ -81,7 +81,7 @@
     <ListView
         android:id="@+id/lv_modelos"
         android:layout_width="400dp"
-        android:layout_height="160dp"
+        android:layout_height="230dp"
         android:layout_marginTop="2dp"
         app:layout_constraintEnd_toEndOf="@+id/btn_limpiar_m"
         app:layout_constraintHorizontal_bias="0.5"

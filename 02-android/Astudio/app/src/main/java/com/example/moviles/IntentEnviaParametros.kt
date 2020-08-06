@@ -40,5 +40,18 @@ class IntentEnviaParametros : AppCompatActivity() {
             )
             finish()
         })
+
+        val cachetes = intent.getParcelableExtra<Mascota>("cachetes")
+        if(cachetes != null){
+            Log.i("parcelable", "${cachetes.nombre} ${cachetes.duenio?.nombre}")
+        }
+
+        val arregloMascotas = intent.getParcelableArrayListExtra<Mascota>("arregloMascotas")
+        if(arregloMascotas != null){
+            arregloMascotas.forEach {
+                Log.i("parcelable", "EN ARREGLO")
+                Log.i("parcelable", "${it.nombre} ${it.duenio?.nombre}")
+            }
+        }
     }
 }

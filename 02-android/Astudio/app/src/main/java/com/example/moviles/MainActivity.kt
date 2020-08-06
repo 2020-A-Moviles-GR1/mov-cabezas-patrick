@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.provider.ContactsContract
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,15 +23,20 @@ class MainActivity : AppCompatActivity() {
         btn_List_view.setOnClickListener({
             irListView()
         })
-        btn_intent_respuesta.setOnClickListener({
-            irIntentRespuesta()
-        })
+//        btn_intent_respuesta.setOnClickListener({
+//            irIntentRespuesta()
+//        })
         btn_intent_implicito.setOnClickListener({
             irImplicito()
         })
         btn_resp_propia.setOnClickListener({
             enviarIntentConRespuestaPropia()
         })
+        btn_intent_respuesta
+            .setOnClickListener {
+                irAIntentConRespuesta()
+            }
+
     }
     fun enviarIntentConRespuestaPropia(){
         var intentExplicito =Intent(this, IntentEnviaParametros::class.java)
@@ -92,6 +98,24 @@ class MainActivity : AppCompatActivity() {
             Log.i("resultado",":(")
         }}
     }
+
+    fun irAIntentConRespuesta() {
+        val intentExplicito = Intent(
+            this,
+            IntentEnviaParametros::class.java
+        )
+        intentExplicito.putExtra("numero", 2)
+
+        val adrian = Usuario("Adrian",31,Date(),1.0)
+        val cachetes = Mascota("Cachetes",adrian)
+        val arregloMascotas = arrayListOf<Mascota>(cachetes)
+
+        intentExplicito.putExtra("cachetes", cachetes)
+        intentExplicito.putExtra("arregloMascotas", arregloMascotas)
+
+        startActivity(intentExplicito)
+    }
+
 
     override fun onStart() {
         super.onStart()
