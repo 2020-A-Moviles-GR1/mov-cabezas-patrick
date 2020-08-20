@@ -7,7 +7,6 @@
  */
 
 module.exports = {
-
   attributes: {
 
     nombre:{
@@ -15,7 +14,11 @@ module.exports = {
     },
     usuario: { // Many to One (nombre FK) - mismo nombre q la relacion
       model: 'usuario',
-      required: true // (Es opcional 1 muchos 0 muchos)
+      // required: true // (Es opcional 1 muchos 0 muchos)
+    },
+    batalla:{
+      collection:'batalla',
+      via:'pokemon'
     }
 
   },
