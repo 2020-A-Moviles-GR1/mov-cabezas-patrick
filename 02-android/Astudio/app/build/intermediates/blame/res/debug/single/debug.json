@@ -56,6 +56,10 @@
         "source": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
+        "merged": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/res/merged/debug/layout_activity_http.xml.flat",
+        "source": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/res/layout/activity_http.xml"
+    },
+    {
         "merged": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
         "source": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/res/layout/activity_main.xml"
     },
