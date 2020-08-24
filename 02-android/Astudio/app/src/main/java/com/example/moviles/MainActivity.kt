@@ -32,11 +32,18 @@ class MainActivity : AppCompatActivity() {
         btn_resp_propia.setOnClickListener({
             enviarIntentConRespuestaPropia()
         })
+        btn_http.setOnClickListener({
+            irHttp()
+        })
         btn_intent_respuesta
             .setOnClickListener {
                 irAIntentConRespuesta()
             }
 
+    }
+    fun irHttp(){
+        var intentExplicito =Intent(this, HttpActivity::class.java)
+        this.startActivity(intentExplicito)
     }
     fun enviarIntentConRespuestaPropia(){
         var intentExplicito =Intent(this, IntentEnviaParametros::class.java)
