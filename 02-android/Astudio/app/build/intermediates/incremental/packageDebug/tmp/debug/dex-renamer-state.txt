@@ -1,4 +1,4 @@
-#Mon Aug 24 09:00:30 ECT 2020
+#Thu Sep 03 09:12:51 ECT 2020
 base.0=/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

@@ -39,7 +39,15 @@ class MainActivity : AppCompatActivity() {
             .setOnClickListener {
                 irAIntentConRespuesta()
             }
+        btn_recycler
+            .setOnClickListener{
+                irRecicleView()
+            }
 
+    }
+    fun irRecicleView(){
+        var intentExplicito =Intent(this, RecyclerVIewActivity::class.java)
+        this.startActivity(intentExplicito)
     }
     fun irHttp(){
         var intentExplicito =Intent(this, HttpActivity::class.java)

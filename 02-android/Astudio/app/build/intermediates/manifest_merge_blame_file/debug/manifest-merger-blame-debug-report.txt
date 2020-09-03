@@ -18,7 +18,7 @@
 12-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:6:22-76
 13
 14    <application
-14-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:8:5-35:19
+14-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:8:5-36:19
 15        android:allowBackup="true"
 15-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:9:9-35
 16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -35,50 +35,53 @@
 22-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:13:9-35
 23        android:testOnly="true"
 24        android:theme="@style/AppTheme"
-24-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:15:9-40
+24-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:14:9-40
 25        android:usesCleartextTraffic="true" >
-25-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:14:9-44
-26        <activity android:name="com.example.moviles.HttpActivity" />
-26-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:16:9-59
-26-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:16:19-47
-27        <activity android:name="com.example.moviles.IntentEnviaParametros" >
-27-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:17:9-25:20
-27-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:17:19-56
-28            <intent-filter>
-28-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:18:13-24:29
-29                <action android:name="android.intent.action.SEND" />
-29-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:19:17-69
-29-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:19:25-66
-30
-31                <category android:name="android.intent.category.DEFAULT" />
-31-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:21:17-76
-31-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:21:27-73
-32
-33                <data android:mimeType="text/plain" />
-33-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:23:17-55
-33-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:23:23-52
-34            </intent-filter>
-35        </activity>
-36        <activity android:name="com.example.moviles.BListViewActivity" />
-36-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:26:9-55
-36-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:26:19-52
-37        <activity android:name="com.example.moviles.CicloVidaActivity" />
+25-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:15:9-44
+26        <activity android:name="com.example.moviles.RecyclerVIewActivity" />
+26-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:16:9-67
+26-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:16:19-55
+27        <activity android:name="com.example.moviles.HttpActivity" />
+27-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:17:9-50
+27-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:17:19-47
+28        <activity android:name="com.example.moviles.IntentEnviaParametros" >
+28-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:18:9-26:20
+28-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:18:19-56
+29            <intent-filter>
+29-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:19:13-25:29
+30                <action android:name="android.intent.action.SEND" />
+30-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:20:17-69
+30-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:20:25-66
+31
+32                <category android:name="android.intent.category.DEFAULT" />
+32-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:22:17-76
+32-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:22:27-73
+33
+34                <data android:mimeType="text/plain" />
+34-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:24:17-55
+34-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:24:23-52
+35            </intent-filter>
+36        </activity>
+37        <activity android:name="com.example.moviles.BListViewActivity" />
 37-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:27:9-55
 37-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:27:19-52
-38        <activity android:name="com.example.moviles.MainActivity" >
-38-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:28:9-34:20
-38-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:28:19-47
-39            <intent-filter>
-39-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:29:13-33:29
-40                <action android:name="android.intent.action.MAIN" />
-40-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:30:17-69
-40-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:30:25-66
-41
-42                <category android:name="android.intent.category.LAUNCHER" />
-42-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:32:17-77
-42-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:32:27-74
-43            </intent-filter>
-44        </activity>
-45    </application>
-46
-47</manifest>
+38        <activity android:name="com.example.moviles.CicloVidaActivity" />
+38-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:28:9-55
+38-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:28:19-52
+39        <activity android:name="com.example.moviles.MainActivity" >
+39-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:29:9-35:20
+39-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:29:19-47
+40            <intent-filter>
+40-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:30:13-34:29
+41                <action android:name="android.intent.action.MAIN" />
+41-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:31:17-69
+41-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:31:25-66
+42
+43                <category android:name="android.intent.category.LAUNCHER" />
+43-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:33:17-77
+43-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:33:27-74
+44            </intent-filter>
+45        </activity>
+46    </application>
+47
+48</manifest>

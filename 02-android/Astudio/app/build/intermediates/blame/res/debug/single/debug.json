@@ -28,16 +28,20 @@
         "source": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
+        "merged": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/res/merged/debug/layout_activity_recycler_v_iew.xml.flat",
+        "source": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/res/layout/activity_recycler_v_iew.xml"
+    },
+    {
         "merged": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
         "source": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/res/merged/debug/layout_activity_b_list_view.xml.flat",
         "source": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/res/layout/activity_b_list_view.xml"
+    },
+    {
+        "merged": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
@@ -70,6 +74,10 @@
     {
         "merged": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/res/merged/debug/drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/res/merged/debug/layout_adaptador_persona.xml.flat",
+        "source": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/res/layout/adaptador_persona.xml"
     },
     {
         "merged": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/res/merged/debug/layout_activity_intent_envia_parametros.xml.flat",
