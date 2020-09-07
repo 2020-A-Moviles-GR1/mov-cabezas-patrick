@@ -43,7 +43,14 @@ class MainActivity : AppCompatActivity() {
             .setOnClickListener{
                 irRecicleView()
             }
+        btn_mapa.setOnClickListener({
+            irmapaactivity()
+        })
 
+    }
+    fun irmapaactivity(){
+        var intentExplicito =Intent(this, MapsActivity::class.java)
+        this.startActivity(intentExplicito)
     }
     fun irRecicleView(){
         var intentExplicito =Intent(this, RecyclerVIewActivity::class.java)
@@ -130,6 +137,8 @@ class MainActivity : AppCompatActivity() {
 
         startActivity(intentExplicito)
     }
+
+
 
 
     override fun onStart() {

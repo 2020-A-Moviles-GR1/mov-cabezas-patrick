@@ -5,6 +5,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_recycler_v_iew.*
 
 class RecyclerVIewActivity : AppCompatActivity() {
+    var numeroLikes=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_v_iew)
@@ -70,5 +71,9 @@ class RecyclerVIewActivity : AppCompatActivity() {
         rv_usuarios.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
         rv_usuarios.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(actividad)
         adaptadorUsuario.notifyDataSetChanged()
+    }
+    fun anadirLikesEnActividad(numero:Int){
+        this.numeroLikes=this.numeroLikes+numero
+        tv_titulo_rv.text=numeroLikes.toString()
     }
 }

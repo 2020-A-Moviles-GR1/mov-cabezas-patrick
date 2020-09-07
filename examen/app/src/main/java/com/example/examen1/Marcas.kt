@@ -13,7 +13,11 @@ class Marcas : AppCompatActivity() {
         setContentView(R.layout.activity_marcas)
 
         var posicion = 0
-        val listaMarcas = ServicioBDDMemoriaMarcas.listaMarcas
+//        val listaMarcas = ServicioBDDMemoriaMarcas.listaMarcas
+        val listaMarcas = ArrayList<Marca>()
+
+        val con = ConexionMarcas()
+        con.obtenerModelo(listaMarcas)
 
         val adaptador = ArrayAdapter(
             this,
@@ -29,17 +33,21 @@ class Marcas : AppCompatActivity() {
         }
 
         btn_agregar.setOnClickListener({
-            ServicioBDDMemoriaMarcas.agragaMarca(getValores())
+            con.crearMarca(getValores())
+            listaMarcas.add(getValores())
+//            ServicioBDDMemoriaMarcas.agragaMarca(getValores())
             adaptador.notifyDataSetChanged()
             limpiarCampos()
         })
         btn_actualizar.setOnClickListener({
+            con.actualizaMarca(getValores())
             ServicioBDDMemoriaMarcas.eliminarMarca(posicion)
             ServicioBDDMemoriaMarcas.agragaMarca(getValores())
             adaptador.notifyDataSetChanged()
             limpiarCampos()
         })
         btn_eliminar.setOnClickListener({
+            con.eliminaMarca(getValores())
             ServicioBDDMemoriaMarcas.eliminarMarca(posicion)
             adaptador.notifyDataSetChanged()
             limpiarCampos()
