@@ -43,7 +43,8 @@ class Modelos : AppCompatActivity() {
             limpiarCampos()
         })
         btn_limpiar_m.setOnClickListener({
-            limpiarCampos()
+//            limpiarCampos()
+            getModelo()
         })
     }
     fun getElementos():Modelo{
@@ -54,6 +55,11 @@ class Modelos : AppCompatActivity() {
         var disponible : Boolean = ch_disponible.isChecked
         return Modelo(nombre,anio,precio,disponible,nombre_marca)
     }
+
+fun getModelo(){
+    val con = ConexionModelos()
+    con.crearModelo()
+}
 
     fun limpiarCampos(){
         txt_nombre_m.setText("")

@@ -41,5 +41,15 @@
             android:text="TextView"
             app:layout_constraintStart_toEndOf="@+id/tv_nombre"
             tools:layout_editor_absoluteY="44dp" />
+
+        <TextView
+            android:id="@+id/tv_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="68dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_cedula"
+            app:layout_constraintStart_toEndOf="@+id/tv_cedula"
+            app:layout_constraintTop_toTopOf="@+id/tv_cedula" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
