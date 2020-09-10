@@ -8,20 +8,31 @@
 
     <Button
         android:id="@+id/btn_obtener"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Obtener"
-        tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="109dp" />
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="44dp"
+        android:text="Obtener usuarios"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_crear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="76dp"
         android:text="Crear"
+        app:layout_constraintEnd_toEndOf="@+id/btn_obtener_p"
+        app:layout_constraintStart_toStartOf="@+id/btn_obtener_p"
+        app:layout_constraintTop_toBottomOf="@+id/btn_obtener_p" />
+
+    <Button
+        android:id="@+id/btn_obtener_p"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="obtener pokemon"
         app:layout_constraintEnd_toEndOf="@+id/btn_obtener"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btn_obtener"
         app:layout_constraintTop_toBottomOf="@+id/btn_obtener" />
 </androidx.constraintlayout.widget.ConstraintLayout>

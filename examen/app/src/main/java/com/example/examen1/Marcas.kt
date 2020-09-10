@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import com.example.examen1.models.MarcaHTTP
 import kotlinx.android.synthetic.main.activity_marcas.*
 
 class Marcas : AppCompatActivity() {
@@ -12,12 +13,10 @@ class Marcas : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_marcas)
 
-        var posicion = 0
-//        val listaMarcas = ServicioBDDMemoriaMarcas.listaMarcas
-        val listaMarcas = ArrayList<Marca>()
-
+        var posicion :Int= 0
+        var idMarca=0
         val con = ConexionMarcas()
-        con.obtenerModelo(listaMarcas)
+        var listaMarcas = con.obtenerMarcas()
 
         val adaptador = ArrayAdapter(
             this,
@@ -28,27 +27,34 @@ class Marcas : AppCompatActivity() {
         lv_marcas.onItemClickListener= AdapterView.OnItemClickListener{
                 parent,view,position,id->
             posicion = position
-            llenarCampos(listaMarcas.get(position))
-            Log.i("List-view","Position $position")
+            idMarca= llenarCampos(listaMarcas.get(position))
+            Log.i("List-view","Position $position  :  $idMarca")
         }
 
-        btn_agregar.setOnClickListener({
-            con.crearMarca(getValores())
-            listaMarcas.add(getValores())
-//            ServicioBDDMemoriaMarcas.agragaMarca(getValores())
-            adaptador.notifyDataSetChanged()
+        btn_agregar.setOnClickListener {
+            val marca = con.crearMarca(parseMarca(getValores()))
+            if (marca != null)
+                listaMarcas.add(marca)
             limpiarCampos()
-        })
-        btn_actualizar.setOnClickListener({
-            con.actualizaMarca(getValores())
-            ServicioBDDMemoriaMarcas.eliminarMarca(posicion)
-            ServicioBDDMemoriaMarcas.agragaMarca(getValores())
             adaptador.notifyDataSetChanged()
+        }
+        btn_actualizar.setOnClickListener {
+            val marca = con.actualizaMarca(parseMarca(getValores()),idMarca)
+            if (marca != null){
+                listaMarcas.removeAt(posicion)
+                listaMarcas.add(marca)
+            }
             limpiarCampos()
-        })
+            adaptador.notifyDataSetChanged()
+
+        }
         btn_eliminar.setOnClickListener({
-            con.eliminaMarca(getValores())
-            ServicioBDDMemoriaMarcas.eliminarMarca(posicion)
+            var marcaR = con.obtenerMarca(idMarca)
+            val marca = con.eliminaMarca(idMarca)
+            if (marcaR != null){
+                con.eliminaModelos(marcaR)
+                listaMarcas.removeAt(posicion)
+            }
             adaptador.notifyDataSetChanged()
             limpiarCampos()
         })
@@ -72,11 +78,23 @@ class Marcas : AppCompatActivity() {
         txt_valor_marca.setText("")
         ch_sucursal_local.setChecked(false)
     }
-    fun llenarCampos(marca:Marca){
+    fun llenarCampos(marca:MarcaHTTP):Int{
         txt_nombre.setText(marca.nombre)
         txt_pais_origen.setText(marca.pais_origen)
         txt_anio_creacion.setText(marca.anio_creacion.toString())
         txt_valor_marca.setText(marca.valor.toInt().toString())
         ch_sucursal_local.setChecked(marca.sucursal_local)
+        return marca.id
+    }
+    fun parseMarca(marca:Marca) : List<Pair<String, String >> {
+
+        val parametrosUsuario: List<Pair<String, String >> = listOf(
+            "nombre" to marca.nombre,
+            "pais_origen" to marca.pais_origen,
+            "anio_creacion" to marca.anio_creacion.toString(),
+            "sucursal_local" to marca.sucursal_local.toString(),
+            "valor" to marca.valor.toString()
+        )
+        return parametrosUsuario
     }
 }
