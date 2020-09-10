@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
-    },
-    {
         "merged": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
         "source": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
         "merged": "/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",

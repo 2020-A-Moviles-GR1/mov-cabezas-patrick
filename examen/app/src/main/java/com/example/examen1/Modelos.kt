@@ -1,9 +1,11 @@
 package com.example.examen1
 
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import com.example.examen1.models.ModeloHTTP
 import kotlinx.android.synthetic.main.activity_modelos.*
 
 class Modelos : AppCompatActivity() {
@@ -12,7 +14,9 @@ class Modelos : AppCompatActivity() {
         setContentView(R.layout.activity_modelos)
 
         var posicion = 0
-        val listaModelos = ServicioBDDMemoriaModelos.listaModelos
+        var idModelo = 0
+        var con = ConexionModelos()
+        val listaModelos = con.obtenerModelos()
 
         val adaptador = ArrayAdapter(
             this,
@@ -23,30 +27,45 @@ class Modelos : AppCompatActivity() {
         lv_modelos.onItemClickListener= AdapterView.OnItemClickListener{
                 parent,view,position,id->
             posicion = position
-            llenarCampos(listaModelos.get(position))
+            idModelo = llenarCampos(listaModelos.get(position))
         }
 
         btn_agregar_m.setOnClickListener({
-            ServicioBDDMemoriaModelos.agragaModelo(getElementos())
-            adaptador.notifyDataSetChanged()
-            limpiarCampos()
+            var datos = parseModelos(getElementos())
+            if(datos != null){
+                var modelo = con.crearModelo(datos)
+                if(modelo != null){
+                    listaModelos.add(modelo)
+                }
+                adaptador.notifyDataSetChanged()
+                limpiarCampos()
+            }
+
         })
         btn_actualizar_m.setOnClickListener({
-            ServicioBDDMemoriaModelos.eliminarModelo(posicion)
-            ServicioBDDMemoriaModelos.agragaModelo(getElementos())
-            adaptador.notifyDataSetChanged()
-            limpiarCampos()
+            var datos = parseModelos(getElementos())
+            if(datos != null){
+                var modelo = con.actualizaModelo(datos,idModelo)
+                if(modelo != null){
+                    listaModelos.removeAt(posicion)
+                    listaModelos.add(modelo)
+                }
+                adaptador.notifyDataSetChanged()
+                limpiarCampos()
+            }
         })
         btn_eliminar_m.setOnClickListener({
-            ServicioBDDMemoriaModelos.eliminarModelo(posicion)
+            var modelo = con.eliminaModelo(idModelo)
+            if(modelo != null)
+                listaModelos.removeAt(posicion)
             adaptador.notifyDataSetChanged()
             limpiarCampos()
         })
         btn_limpiar_m.setOnClickListener({
-//            limpiarCampos()
-            getModelo()
+            limpiarCampos()
         })
     }
+
     fun getElementos():Modelo{
         var nombre: String = txt_nombre_m.getText().toString()
         var anio : Int = txt_anio_m.getText().toString().toInt()
@@ -56,11 +75,6 @@ class Modelos : AppCompatActivity() {
         return Modelo(nombre,anio,precio,disponible,nombre_marca)
     }
 
-fun getModelo(){
-    val con = ConexionModelos()
-    con.crearModelo()
-}
-
     fun limpiarCampos(){
         txt_nombre_m.setText("")
         txt_anio_m.setText("")
@@ -68,11 +82,37 @@ fun getModelo(){
         txt_nomre_marca.setText("")
         ch_disponible.setChecked(false)
     }
-    fun llenarCampos(modelo:Modelo){
+    fun llenarCampos(modelo:ModeloHTTP):Int{
         txt_nombre_m.setText(modelo.nombre)
         txt_anio_m.setText(modelo.anio_lanzamiento.toString())
         txt_precio_m.setText(modelo.precio.toString())
-        txt_nomre_marca.setText(modelo.marca)
+        txt_nomre_marca.setText(modelo.marca.toString())
+//        val con = ConexionMarcas()
+//        val idMarca = con.encuentraMarca(modelo.marca.toString())
+//        if(idMarca != null){
+//            val marca = con.obtenerMarca(idMarca.id)
+//            if (marca != null)
+//                txt_nomre_marca.setText(marca.nombre)
+//        }
         ch_disponible.setChecked(modelo.disponible)
+        return modelo.id
+    }
+    fun parseModelos(modelo:Modelo) : List<Pair<String, String>>? {
+        val con = ConexionMarcas()
+        var parametrosUsuario : List<Pair<String, String>>? = null
+        val idMarca = con.encuentraMarca(modelo.marca)
+        if(idMarca != null){
+            parametrosUsuario = listOf(
+                "nombre" to modelo.nombre,
+                "anio_lanzamiento" to modelo.anio_lanzamiento.toString(),
+                "precio" to modelo.precio.toString(),
+                "disponible" to modelo.disponible.toString(),
+                "marca" to idMarca.id.toString()
+            )
+            Log.i("dato","no se hay el modelo ${idMarca.id}")
+        }else{
+            Log.i("dato","no se hay el modelo ${modelo.marca}")
+        }
+        return parametrosUsuario
     }
 }

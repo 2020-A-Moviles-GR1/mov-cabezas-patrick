@@ -19,7 +19,10 @@ class HttpActivity : AppCompatActivity() {
             .setOnClickListener {
                 obtenerUsuarios()
             }
-
+        btn_obtener_p
+            .setOnClickListener{
+                obtenerPokemon()
+            }
         btn_crear
             .setOnClickListener {
                 crearUsuario()
@@ -53,7 +56,63 @@ class HttpActivity : AppCompatActivity() {
             }
     }
 
+
     fun obtenerUsuarios() {
+        val url = urlPrincipal + "/Usuario";
+
+        var usuario: ArrayList<UsuarioHttp> = arrayListOf()
+
+        val getHttp = url.httpGet().responseString { request, response, result ->
+            when (result) {
+                is Result.Failure -> {
+                    val ex = result.getException()
+                }
+                is Result.Success -> {
+                    val data = result.get();
+                    usuario = ArrayList(
+                        Klaxon().converter(ParseUsuario().conversorUsuario)
+                            .parseArray<UsuarioHttp>(data)!!
+                    )
+                }
+
+            }
+        }
+        getHttp.join()
+        usuario.forEach{
+            Log.i("usuario:",it.nombre+",  ")
+            it.pokemons?.forEach {
+                Log.i("     pokemon: ",it.nombre)
+            }
+        }
+    }
+
+    fun obtenerPokemon(){
+        val url = urlPrincipal + "/pokemon";
+        var pokemons: ArrayList<PokemonHttp> = arrayListOf()
+        val getHttp = url.httpGet().responseString { request, response, result ->
+            when (result) {
+                is Result.Failure -> {
+                    val ex = result.getException()
+                    val error = result.error
+                    Log.i("http-klaxon", "Error: ${ex.message}")
+                }
+                is Result.Success -> {
+                    val data = result.get();
+                    pokemons = ArrayList(
+                        Klaxon().converter(ParseUsuario().conversorUsuario)
+                            .parseArray<PokemonHttp>(data)!!
+                    )
+                }
+            }
+        }
+        getHttp.join()
+        pokemons.forEach {
+            Log.i("Pokemons", "${it.nombre}")
+        }
+    }
+
+
+    fun obtenerUsuarios2() {
         val pokemonString = """
             {
             "createdAt": 1597671444841,
@@ -83,26 +142,22 @@ class HttpActivity : AppCompatActivity() {
                 when (result) {
                     is Result.Success -> {
                         val data = result.get()
-                        Log.i("http-klaxon", "Data: ${data}")
-
                         val usuarios = Klaxon()
                             .parseArray<UsuarioHttp>(data)
                         if (usuarios != null) {
                             usuarios.forEach {
-                                Log.i(
-                                    "http-klaxon",
-                                    "Nombre: ${it.nombre}"
-                                            +
-                                            " Estado civil: ${it.estadoCivil}"
+                                Log.i("http-klaxon","Nombre: ${it.nombre}"+" Estado civil: ${it.pokemons}"
                                 )
-                                if (it.pokemons.size > 0) {
-                                    it.pokemons.forEach {
-                                        Log.i(
-                                            "http-klaxon",
-                                            "Nombre: ${it.nombre}"
-                                        )
-                                    }
-                                }
+//                                if (it.pokemons != null){
+//                                    if (it.pokemons.size > 0) {
+//                                        it.pokemons.forEach {
+//                                            Log.i(
+//                                                "http-klaxon",
+//                                                "Nombre: ${it.nombre}"
+//                                            )
+//                                        }
+//                                    }
+//                                }
                             }
                         }
 

@@ -851,6 +851,7 @@ id btn_intent_implicito
 id btn_intent_respuesta
 id btn_mapa
 id btn_obtener
+id btn_obtener_p
 id btn_recycler
 id btn_resp_aceptar
 id btn_resp_cancelar
