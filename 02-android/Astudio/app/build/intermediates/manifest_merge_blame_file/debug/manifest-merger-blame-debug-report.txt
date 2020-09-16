@@ -10,138 +10,144 @@
 9        android:targetSdkVersion="30" />
 9-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml
 10
-11    <!--
-12         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-13         Google Maps Android API v2, but you must specify either coarse or fine
-14         location permissions for the "MyLocation" functionality.
-15    -->
-16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-16-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:10:5-79
-16-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:10:22-76
-17    <uses-permission android:name="android.permission.INTERNET" />
-17-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:11:5-67
-17-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:11:22-64
-18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-18-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:12:5-79
-18-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:12:22-76
-19
-20    <uses-feature
-20-->[com.google.android.gms:play-services-maps:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/7345f62f6933bfbfe70b0b6c644df5f1/jetified-play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
-21        android:glEsVersion="0x00020000"
-21-->[com.google.android.gms:play-services-maps:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/7345f62f6933bfbfe70b0b6c644df5f1/jetified-play-services-maps-17.0.0/AndroidManifest.xml:27:9-41
-22        android:required="true" />
-22-->[com.google.android.gms:play-services-maps:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/7345f62f6933bfbfe70b0b6c644df5f1/jetified-play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
-23
-24    <application
-24-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:14:5-58:19
-25        android:allowBackup="true"
-25-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:15:9-35
-26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-26-->[androidx.core:core:1.3.0] /home/d/.gradle/caches/transforms-2/files-2.1/8106c9afeb27cc0c50f85995740f877c/core-1.3.0/AndroidManifest.xml:24:18-86
-27        android:debuggable="true"
-28        android:extractNativeLibs="false"
-29        android:icon="@mipmap/ic_launcher"
-29-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:16:9-43
-30        android:label="@string/app_name"
-30-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:17:9-41
-31        android:roundIcon="@mipmap/ic_launcher_round"
-31-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:18:9-54
-32        android:supportsRtl="true"
-32-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:19:9-35
-33        android:testOnly="true"
-34        android:theme="@style/AppTheme"
-34-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:20:9-40
-35        android:usesCleartextTraffic="true" >
-35-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:21:9-44
-36
-37        <!--
-38             The API key for Google Maps-based APIs is defined as a string resource.
-39             (See the file "res/values/google_maps_api.xml").
-40             Note that the API key is linked to the encryption key used to sign the APK.
-41             You need a different API key for each encryption key, including the release key that is used to
-42             sign the APK for publishing.
-43             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-44        -->
-45        <meta-data
-45-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:31:9-33:55
-46            android:name="com.google.android.geo.API_KEY"
-46-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:32:13-58
-47            android:value="@string/google_maps_key" />
-47-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:33:13-52
-48
-49        <activity
-49-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:35:9-37:68
-50            android:name="com.example.moviles.MapsActivity"
-50-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:36:13-41
-51            android:label="@string/title_activity_maps" />
-51-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:37:13-56
-52        <activity android:name="com.example.moviles.RecyclerVIewActivity" />
-52-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:38:9-58
-52-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:38:19-55
-53        <activity android:name="com.example.moviles.HttpActivity" />
-53-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:39:9-50
-53-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:39:19-47
-54        <activity android:name="com.example.moviles.IntentEnviaParametros" >
-54-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:40:9-48:20
-54-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:40:19-56
-55            <intent-filter>
-55-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:41:13-47:29
-56                <action android:name="android.intent.action.SEND" />
-56-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:42:17-69
-56-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:42:25-66
-57
-58                <category android:name="android.intent.category.DEFAULT" />
-58-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:44:17-76
-58-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:44:27-73
-59
-60                <data android:mimeType="text/plain" />
-60-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:46:17-55
-60-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:46:23-52
-61            </intent-filter>
-62        </activity>
-63        <activity android:name="com.example.moviles.BListViewActivity" />
-63-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:49:9-55
-63-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:49:19-52
-64        <activity android:name="com.example.moviles.CicloVidaActivity" />
-64-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:50:9-55
-64-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:50:19-52
-65        <activity android:name="com.example.moviles.MainActivity" >
-65-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:51:9-57:20
-65-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:51:19-47
-66            <intent-filter>
-66-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:52:13-56:29
-67                <action android:name="android.intent.action.MAIN" />
-67-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:53:17-69
-67-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:53:25-66
-68
-69                <category android:name="android.intent.category.LAUNCHER" />
-69-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:55:17-77
-69-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:55:27-74
-70            </intent-filter>
-71        </activity>
-72        <!-- Needs to be explicitly declared on P+ -->
-73        <uses-library
-73-->[com.google.android.gms:play-services-maps:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/7345f62f6933bfbfe70b0b6c644df5f1/jetified-play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
-74            android:name="org.apache.http.legacy"
-74-->[com.google.android.gms:play-services-maps:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/7345f62f6933bfbfe70b0b6c644df5f1/jetified-play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
-75            android:required="false" />
-75-->[com.google.android.gms:play-services-maps:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/7345f62f6933bfbfe70b0b6c644df5f1/jetified-play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
-76
-77        <activity
-77-->[com.google.android.gms:play-services-base:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/b1beed74396dcf2ff7139271bbe8d64c/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
-78            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-78-->[com.google.android.gms:play-services-base:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/b1beed74396dcf2ff7139271bbe8d64c/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
-79            android:exported="false"
-79-->[com.google.android.gms:play-services-base:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/b1beed74396dcf2ff7139271bbe8d64c/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
-80            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-80-->[com.google.android.gms:play-services-base:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/b1beed74396dcf2ff7139271bbe8d64c/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
-81
-82        <meta-data
-82-->[com.google.android.gms:play-services-basement:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/93be7174b7be54dada154bbbe746f6ab/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
-83            android:name="com.google.android.gms.version"
-83-->[com.google.android.gms:play-services-basement:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/93be7174b7be54dada154bbbe746f6ab/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-84            android:value="@integer/google_play_services_version" />
-84-->[com.google.android.gms:play-services-basement:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/93be7174b7be54dada154bbbe746f6ab/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
-85    </application>
-86
-87</manifest>
+11    <uses-feature
+11-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:6:5-90
+12        android:name="android.hardware.location.gps"
+12-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:6:19-63
+13        android:required="true" />
+13-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:6:64-87
+14    <!--
+15         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+16         Google Maps Android API v2, but you must specify either coarse or fine
+17         location permissions for the "MyLocation" functionality.
+18    -->
+19    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+19-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:12:5-79
+19-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:12:22-76
+20    <uses-permission android:name="android.permission.INTERNET" />
+20-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:13:5-67
+20-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:13:22-64
+21    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+21-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:14:5-79
+21-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:14:22-76
+22
+23    <uses-feature
+23-->[com.google.android.gms:play-services-maps:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/7345f62f6933bfbfe70b0b6c644df5f1/jetified-play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
+24        android:glEsVersion="0x00020000"
+24-->[com.google.android.gms:play-services-maps:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/7345f62f6933bfbfe70b0b6c644df5f1/jetified-play-services-maps-17.0.0/AndroidManifest.xml:27:9-41
+25        android:required="true" />
+25-->[com.google.android.gms:play-services-maps:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/7345f62f6933bfbfe70b0b6c644df5f1/jetified-play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
+26
+27    <application
+27-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:16:5-60:19
+28        android:allowBackup="true"
+28-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:17:9-35
+29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+29-->[androidx.core:core:1.3.0] /home/d/.gradle/caches/transforms-2/files-2.1/8106c9afeb27cc0c50f85995740f877c/core-1.3.0/AndroidManifest.xml:24:18-86
+30        android:debuggable="true"
+31        android:extractNativeLibs="false"
+32        android:icon="@mipmap/ic_launcher"
+32-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:18:9-43
+33        android:label="@string/app_name"
+33-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:19:9-41
+34        android:roundIcon="@mipmap/ic_launcher_round"
+34-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:20:9-54
+35        android:supportsRtl="true"
+35-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:21:9-35
+36        android:testOnly="true"
+37        android:theme="@style/AppTheme"
+37-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:22:9-40
+38        android:usesCleartextTraffic="true" >
+38-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:23:9-44
+39
+40        <!--
+41             The API key for Google Maps-based APIs is defined as a string resource.
+42             (See the file "res/values/google_maps_api.xml").
+43             Note that the API key is linked to the encryption key used to sign the APK.
+44             You need a different API key for each encryption key, including the release key that is used to
+45             sign the APK for publishing.
+46             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+47        -->
+48        <meta-data
+48-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:33:9-35:55
+49            android:name="com.google.android.geo.API_KEY"
+49-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:34:13-58
+50            android:value="@string/google_maps_key" />
+50-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:35:13-52
+51
+52        <activity
+52-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:37:9-39:68
+53            android:name="com.example.moviles.MapsActivity"
+53-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:38:13-41
+54            android:label="@string/title_activity_maps" />
+54-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:39:13-56
+55        <activity android:name="com.example.moviles.RecyclerVIewActivity" />
+55-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:40:9-58
+55-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:40:19-55
+56        <activity android:name="com.example.moviles.HttpActivity" />
+56-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:41:9-50
+56-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:41:19-47
+57        <activity android:name="com.example.moviles.IntentEnviaParametros" >
+57-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:42:9-50:20
+57-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:42:19-56
+58            <intent-filter>
+58-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:43:13-49:29
+59                <action android:name="android.intent.action.SEND" />
+59-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:44:17-69
+59-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:44:25-66
+60
+61                <category android:name="android.intent.category.DEFAULT" />
+61-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:46:17-76
+61-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:46:27-73
+62
+63                <data android:mimeType="text/plain" />
+63-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:48:17-55
+63-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:48:23-52
+64            </intent-filter>
+65        </activity>
+66        <activity android:name="com.example.moviles.BListViewActivity" />
+66-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:51:9-55
+66-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:51:19-52
+67        <activity android:name="com.example.moviles.CicloVidaActivity" />
+67-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:52:9-55
+67-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:52:19-52
+68        <activity android:name="com.example.moviles.MainActivity" >
+68-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:53:9-59:20
+68-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:53:19-47
+69            <intent-filter>
+69-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:54:13-58:29
+70                <action android:name="android.intent.action.MAIN" />
+70-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:55:17-69
+70-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:55:25-66
+71
+72                <category android:name="android.intent.category.LAUNCHER" />
+72-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:57:17-77
+72-->/home/d/Documentos/programacion/mov-cabezas-patrick/02-android/Astudio/app/src/main/AndroidManifest.xml:57:27-74
+73            </intent-filter>
+74        </activity>
+75        <!-- Needs to be explicitly declared on P+ -->
+76        <uses-library
+76-->[com.google.android.gms:play-services-maps:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/7345f62f6933bfbfe70b0b6c644df5f1/jetified-play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
+77            android:name="org.apache.http.legacy"
+77-->[com.google.android.gms:play-services-maps:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/7345f62f6933bfbfe70b0b6c644df5f1/jetified-play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
+78            android:required="false" />
+78-->[com.google.android.gms:play-services-maps:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/7345f62f6933bfbfe70b0b6c644df5f1/jetified-play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
+79
+80        <activity
+80-->[com.google.android.gms:play-services-base:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/b1beed74396dcf2ff7139271bbe8d64c/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+81            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+81-->[com.google.android.gms:play-services-base:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/b1beed74396dcf2ff7139271bbe8d64c/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+82            android:exported="false"
+82-->[com.google.android.gms:play-services-base:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/b1beed74396dcf2ff7139271bbe8d64c/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+83            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+83-->[com.google.android.gms:play-services-base:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/b1beed74396dcf2ff7139271bbe8d64c/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+84
+85        <meta-data
+85-->[com.google.android.gms:play-services-basement:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/93be7174b7be54dada154bbbe746f6ab/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+86            android:name="com.google.android.gms.version"
+86-->[com.google.android.gms:play-services-basement:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/93be7174b7be54dada154bbbe746f6ab/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+87            android:value="@integer/google_play_services_version" />
+87-->[com.google.android.gms:play-services-basement:17.0.0] /home/d/.gradle/caches/transforms-2/files-2.1/93be7174b7be54dada154bbbe746f6ab/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+88    </application>
+89
+90</manifest>
