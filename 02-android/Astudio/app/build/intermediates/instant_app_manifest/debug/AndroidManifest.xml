@@ -9,6 +9,9 @@
         android:minSdkVersion="23"
         android:targetSdkVersion="30" />
 
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="true" />
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
