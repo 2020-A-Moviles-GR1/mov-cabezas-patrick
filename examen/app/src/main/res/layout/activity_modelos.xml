@@ -12,10 +12,10 @@
         android:layout_width="150dp"
         android:layout_height="30dp"
         android:text="Disponible"
-        app:layout_constraintEnd_toEndOf="@+id/txt_nomre_marca"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="@+id/txt_nomre_marca"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nomre_marca" />
+        app:layout_constraintEnd_toEndOf="@+id/txt_url_img"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/txt_url_img"
+        app:layout_constraintTop_toBottomOf="@+id/txt_url_img" />
 
     <TextView
         android:id="@+id/txt_menu_modelos"
@@ -82,9 +82,8 @@
         android:id="@+id/lv_modelos"
         android:layout_width="370dp"
         android:layout_height="150dp"
-        android:layout_marginTop="2dp"
         app:layout_constraintEnd_toEndOf="@+id/btn_limpiar_m"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="@+id/btn_limpiar_m"
         app:layout_constraintTop_toBottomOf="@+id/btn_limpiar_m"></ListView>
 
@@ -119,5 +118,49 @@
         app:layout_constraintEnd_toEndOf="@+id/btn_eliminar_m"
         app:layout_constraintStart_toStartOf="@+id/btn_eliminar_m"
         app:layout_constraintTop_toBottomOf="@+id/btn_eliminar_m" />
+
+    <EditText
+        android:id="@+id/txt_latitud"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="latitud"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_longitud"
+        app:layout_constraintStart_toStartOf="@+id/txt_nomre_marca"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nomre_marca" />
+
+    <EditText
+        android:id="@+id/txt_longitud"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="longitud"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/txt_nomre_marca"
+        app:layout_constraintStart_toEndOf="@+id/txt_latitud"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nomre_marca" />
+
+    <EditText
+        android:id="@+id/txt_url"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Url sictio"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/txt_longitud"
+        app:layout_constraintStart_toStartOf="@+id/txt_latitud"
+        app:layout_constraintTop_toBottomOf="@+id/txt_longitud" />
+
+    <EditText
+        android:id="@+id/txt_url_img"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="url imagen"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/txt_url"
+        app:layout_constraintStart_toStartOf="@+id/txt_url"
+        app:layout_constraintTop_toBottomOf="@+id/txt_url" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

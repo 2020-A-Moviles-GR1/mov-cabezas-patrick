@@ -21,9 +21,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
         GoogleMap.OnPolygonClickListener
     {
 
-
     private lateinit var mMap: GoogleMap
     var tienePermisos = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
