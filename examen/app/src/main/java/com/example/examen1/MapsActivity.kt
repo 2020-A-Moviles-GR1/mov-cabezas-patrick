@@ -1,17 +1,22 @@
 package com.example.examen1
 
+import android.content.Intent
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-
+//import com.bumptech.glide.Glide
+//import com.bumptech.glide.RequestBuilder
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
+
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
     GoogleMap.OnCameraMoveCanceledListener,
@@ -33,8 +38,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-
-
     }
 
     /**
@@ -51,9 +54,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
 
         var con = ConexionModelos()
         val listaModelos = con.obtenerModelos()
-
+        var contador=0
+//        val markerIcon: BitmapDescriptor = getMarkerIconFromDrawable(circleDrawable)
         listaModelos.forEach {
-            anadirMarcador(it.latitud,it.longitud,it.nombre)
+            anadirMarcador(it.latitud,it.longitud,it.nombre,it.url,contador)
+            contador = contador+1
         }
 
         val puntoU = LatLng(-0.176714, -78.485399)
@@ -61,14 +66,47 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
         moverCamaraConZoom(puntoU,zoom)
 
         mMap.setOnMarkerClickListener(this)
+
     }
 
-    fun anadirMarcador(latitude:String,longitud:String,title:String){
+    fun getUrlFromIntent(url: String) {
+//        var Url = "http://www.google.com"
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse("http://"+url)
+        startActivity(intent)
+    }
+
+    fun anadirMarcador(latitude:String,longitud:String,title:String,url:String,contador:Int){
         Log.i("ubicaciones","${latitude.toDouble()} - ${longitud.toDouble()}")
+//        var contador = 0
+//        :Any
+        var Url = "https://media.vandal.net/i/1024x576/4-2019/2019429201112_1.jpg"
+//        val bmImg: Bitmap = Ion.with(this).load(url).asBitmap().get()
+
         mMap.addMarker(
             MarkerOptions().position(LatLng(latitude.toDouble(),longitud.toDouble())).title(title)
-        
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))
+                .snippet(url)
+                .anchor(0.05f,0.05f)
+//                .icon(getIcono(contador))
         )
+    }
+    fun getIcono(categoria: Int): BitmapDescriptor? {
+        if (categoria == 1){
+            return BitmapDescriptorFactory.fromResource(R.drawable.common_google_signin_btn_icon_dark_focused)
+        }else if(categoria == 2){
+            return BitmapDescriptorFactory.fromResource(R.drawable.common_google_signin_btn_icon_light_normal_background)
+        }else if(categoria == 3){
+            return BitmapDescriptorFactory.fromResource(R.drawable.common_google_signin_btn_icon_dark_focused)
+        }else if(categoria == 4){
+            return BitmapDescriptorFactory.fromResource(R.drawable.common_google_signin_btn_icon_dark_normal)
+        }else if(categoria == 5){
+            return BitmapDescriptorFactory.fromResource(R.drawable.common_google_signin_btn_icon_dark_normal_background)
+        }else if(categoria == 6) {
+            return BitmapDescriptorFactory.fromResource(R.drawable.common_google_signin_btn_icon_disabled)
+        }else
+            return BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)
+        return null
     }
 
     fun solictitarPermisos(){
@@ -118,9 +156,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
     }
 
     override fun onMarkerClick(p0: Marker?): Boolean {
-        Log.i("mapa","Polyline onMarkerClick ${p0.toString()}")
-        if (p0 != null)
-            p0.showInfoWindow()
+
+        if (p0 != null) {
+            Log.i("mapa", "Polyline onMarkerClick ${p0.snippet}")
+            getUrlFromIntent(p0.snippet)
+        }
         return false
     }
 }
