@@ -47,49 +47,45 @@
         android:hint="Nombre de la Marca"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/txt_precio_m"
-        app:layout_constraintStart_toStartOf="@+id/txt_precio_m"
+        app:layout_constraintStart_toStartOf="@+id/txt_anio_m"
         app:layout_constraintTop_toBottomOf="@+id/txt_precio_m" />
 
     <Button
         android:id="@+id/btn_agregar_m"
-        android:layout_width="250dp"
+        android:layout_width="150dp"
         android:layout_height="35dp"
         android:text="Agregar"
-        app:layout_constraintEnd_toEndOf="@+id/ch_disponible"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="@+id/ch_disponible"
+        app:layout_constraintStart_toStartOf="@+id/txt_url_img"
         app:layout_constraintTop_toBottomOf="@+id/ch_disponible" />
 
     <Button
         android:id="@+id/btn_actualizar_m"
-        android:layout_width="250dp"
+        android:layout_width="150dp"
         android:layout_height="35dp"
         android:text="Actualizar"
-        app:layout_constraintEnd_toEndOf="@+id/btn_agregar_m"
-        app:layout_constraintStart_toStartOf="@+id/btn_agregar_m"
-        app:layout_constraintTop_toBottomOf="@+id/btn_agregar_m" />
+        app:layout_constraintEnd_toEndOf="@+id/txt_url_img"
+        app:layout_constraintTop_toBottomOf="@+id/ch_disponible" />
 
     <Button
         android:id="@+id/btn_eliminar_m"
-        android:layout_width="250dp"
+        android:layout_width="150dp"
         android:layout_height="35dp"
         android:text="Eliminar"
         app:layout_constraintEnd_toEndOf="@+id/btn_actualizar_m"
-        app:layout_constraintStart_toStartOf="@+id/btn_actualizar_m"
         app:layout_constraintTop_toBottomOf="@+id/btn_actualizar_m" />
 
     <ListView
         android:id="@+id/lv_modelos"
-        android:layout_width="370dp"
+        android:layout_width="340dp"
         android:layout_height="150dp"
-        app:layout_constraintEnd_toEndOf="@+id/btn_limpiar_m"
+        app:layout_constraintEnd_toEndOf="@+id/btn_eliminar_m"
         app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="@+id/btn_limpiar_m"
         app:layout_constraintTop_toBottomOf="@+id/btn_limpiar_m"></ListView>
 
     <EditText
         android:id="@+id/txt_anio_m"
-        android:layout_width="300dp"
+        android:layout_width="150dp"
         android:layout_height="40dp"
         android:ems="10"
         android:hint="Año Lanzamiento"
@@ -101,23 +97,22 @@
 
     <EditText
         android:id="@+id/txt_precio_m"
-        android:layout_width="300dp"
+        android:layout_width="150dp"
         android:layout_height="40dp"
         android:ems="10"
         android:hint="Precio"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/txt_anio_m"
-        app:layout_constraintStart_toStartOf="@+id/txt_anio_m"
-        app:layout_constraintTop_toBottomOf="@+id/txt_anio_m" />
+        app:layout_constraintBottom_toBottomOf="@+id/txt_anio_m"
+        app:layout_constraintStart_toEndOf="@+id/txt_anio_m" />
 
     <Button
         android:id="@+id/btn_limpiar_m"
-        android:layout_width="250dp"
+        android:layout_width="150dp"
         android:layout_height="35dp"
         android:text="Limpiar"
-        app:layout_constraintEnd_toEndOf="@+id/btn_eliminar_m"
-        app:layout_constraintStart_toStartOf="@+id/btn_eliminar_m"
-        app:layout_constraintTop_toBottomOf="@+id/btn_eliminar_m" />
+        app:layout_constraintEnd_toStartOf="@+id/btn_eliminar_m"
+        app:layout_constraintStart_toStartOf="@+id/btn_agregar_m"
+        app:layout_constraintTop_toBottomOf="@+id/btn_agregar_m" />
 
     <EditText
         android:id="@+id/txt_latitud"

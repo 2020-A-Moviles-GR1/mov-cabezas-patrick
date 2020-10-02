@@ -1,22 +1,28 @@
 package com.example.examen1
 
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Canvas
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-//import com.bumptech.glide.Glide
-//import com.bumptech.glide.RequestBuilder
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.SimpleTarget
+import com.example.examen1.models.ModeloHTTP
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
-
+import java.net.URL
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
     GoogleMap.OnCameraMoveCanceledListener,
@@ -29,6 +35,21 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
 
     private lateinit var mMap: GoogleMap
     var tienePermisos = false
+    var lista_marcadores: List<Int> = listOf(
+        R.drawable.marcador0,
+        R.drawable.marcador1,
+        R.drawable.marcador2,
+        R.drawable.marcador3,
+        R.drawable.marcador4,
+        R.drawable.marcador5,
+        R.drawable.marcador6,
+        R.drawable.marcador7,
+        R.drawable.marcador8,
+        R.drawable.marcador9,
+        R.drawable.marcador10,
+        R.drawable.marcador11,
+        R.drawable.marcador12
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
@@ -78,35 +99,22 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
 
     fun anadirMarcador(latitude:String,longitud:String,title:String,url:String,contador:Int){
         Log.i("ubicaciones","${latitude.toDouble()} - ${longitud.toDouble()}")
-//        var contador = 0
-//        :Any
-        var Url = "https://media.vandal.net/i/1024x576/4-2019/2019429201112_1.jpg"
-//        val bmImg: Bitmap = Ion.with(this).load(url).asBitmap().get()
+
+
+        var imagen = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)
+
+        try {
+            imagen = BitmapDescriptorFactory.fromResource(lista_marcadores.get(contador))
+        }catch (e: Exception) {
+            Log.i("Error ####","no se udo cargasr ${e}")
+        }
 
         mMap.addMarker(
             MarkerOptions().position(LatLng(latitude.toDouble(),longitud.toDouble())).title(title)
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA))
                 .snippet(url)
                 .anchor(0.05f,0.05f)
-//                .icon(getIcono(contador))
+                .icon(imagen)
         )
-    }
-    fun getIcono(categoria: Int): BitmapDescriptor? {
-        if (categoria == 1){
-            return BitmapDescriptorFactory.fromResource(R.drawable.common_google_signin_btn_icon_dark_focused)
-        }else if(categoria == 2){
-            return BitmapDescriptorFactory.fromResource(R.drawable.common_google_signin_btn_icon_light_normal_background)
-        }else if(categoria == 3){
-            return BitmapDescriptorFactory.fromResource(R.drawable.common_google_signin_btn_icon_dark_focused)
-        }else if(categoria == 4){
-            return BitmapDescriptorFactory.fromResource(R.drawable.common_google_signin_btn_icon_dark_normal)
-        }else if(categoria == 5){
-            return BitmapDescriptorFactory.fromResource(R.drawable.common_google_signin_btn_icon_dark_normal_background)
-        }else if(categoria == 6) {
-            return BitmapDescriptorFactory.fromResource(R.drawable.common_google_signin_btn_icon_disabled)
-        }else
-            return BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)
-        return null
     }
 
     fun solictitarPermisos(){
@@ -156,11 +164,37 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
     }
 
     override fun onMarkerClick(p0: Marker?): Boolean {
-
         if (p0 != null) {
             Log.i("mapa", "Polyline onMarkerClick ${p0.snippet}")
             getUrlFromIntent(p0.snippet)
         }
         return false
     }
+
+//    private fun getMarkerIcon(context: Context, cancion: ModeloHTTP, listener: (BitmapDescriptor) -> Unit) {
+//        val markerView = View.inflate(context, R.layout.map_maker, null)
+//        Glide.with(context)
+//            .asBitmap()
+//            .load(cancion.url_img)
+//            .into(object : SimpleTarget<Bitmap>() {
+//
+//
+//                override fun onResourceReady(
+//                    resource: Bitmap,
+//                    transition: com.bumptech.glide.request.transition.Transition<in Bitmap>?
+//                ) {
+//                    markerView.map_container.setImageBitmap(resource)
+//                    listener.invoke(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(markerView)))
+//                }
+//            })}
+
+
+//    private fun getBitmapFromView(view: View): Bitmap {
+//        view.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
+//        val bitmap = Bitmap.createBitmap(view.measuredWidth, view.measuredHeight, Bitmap.Config.ARGB_8888)
+//        val canvas = Canvas(bitmap)
+//        view.layout(0, 0, view.measuredWidth, view.measuredHeight)
+//        view.draw(canvas)
+//        return bitmap
+//    }
 }
