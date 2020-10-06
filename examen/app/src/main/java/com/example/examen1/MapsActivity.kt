@@ -14,15 +14,11 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.SimpleTarget
-import com.example.examen1.models.ModeloHTTP
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
-import java.net.URL
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
     GoogleMap.OnCameraMoveCanceledListener,
@@ -106,7 +102,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
         try {
             imagen = BitmapDescriptorFactory.fromResource(lista_marcadores.get(contador))
         }catch (e: Exception) {
-            Log.i("Error ####","no se udo cargasr ${e}")
+            Log.i("#### Error: ","${e}")
         }
 
         mMap.addMarker(
@@ -170,31 +166,4 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
         }
         return false
     }
-
-//    private fun getMarkerIcon(context: Context, cancion: ModeloHTTP, listener: (BitmapDescriptor) -> Unit) {
-//        val markerView = View.inflate(context, R.layout.map_maker, null)
-//        Glide.with(context)
-//            .asBitmap()
-//            .load(cancion.url_img)
-//            .into(object : SimpleTarget<Bitmap>() {
-//
-//
-//                override fun onResourceReady(
-//                    resource: Bitmap,
-//                    transition: com.bumptech.glide.request.transition.Transition<in Bitmap>?
-//                ) {
-//                    markerView.map_container.setImageBitmap(resource)
-//                    listener.invoke(BitmapDescriptorFactory.fromBitmap(getBitmapFromView(markerView)))
-//                }
-//            })}
-
-
-//    private fun getBitmapFromView(view: View): Bitmap {
-//        view.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
-//        val bitmap = Bitmap.createBitmap(view.measuredWidth, view.measuredHeight, Bitmap.Config.ARGB_8888)
-//        val canvas = Canvas(bitmap)
-//        view.layout(0, 0, view.measuredWidth, view.measuredHeight)
-//        view.draw(canvas)
-//        return bitmap
-//    }
 }

@@ -41,6 +41,7 @@ class Modelos : AppCompatActivity() {
                 limpiarCampos()
             }
         })
+
         btn_actualizar_m.setOnClickListener({
             var datos = parseModelos(getElementos())
             if(datos != null){
@@ -94,13 +95,7 @@ class Modelos : AppCompatActivity() {
         txt_anio_m.setText(modelo.anio_lanzamiento.toString())
         txt_precio_m.setText(modelo.precio.toString())
         txt_nomre_marca.setText(modelo.marca.toString())
-//        val con = ConexionMarcas()
-//        val idMarca = con.encuentraMarca(modelo.marca.toString())
-//        if(idMarca != null){
-//            val marca = con.obtenerMarca(idMarca.id)
-//            if (marca != null)
-//                txt_nomre_marca.setText(marca.nombre)
-//        }
+
         txt_latitud.setText(modelo.latitud)
         txt_longitud.setText(modelo.longitud)
         txt_url.setText(modelo.url)
