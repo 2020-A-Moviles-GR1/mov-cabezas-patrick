@@ -11,6 +11,10 @@ class ModeloHTTP (
     var anio_lanzamiento:Int,
     var precio:Float,
     var disponible:Boolean,//estado
+    var latitud:String,
+    var longitud:String,
+    var url:String,
+    var url_img:String,
     val marca: Any? = null
 ){
 //    override fun toString(): String {
@@ -36,6 +40,10 @@ class ParseModelo{
                     jv.objInt("anio_lanzamiento"),
                     jv.obj?.get("precio").toString().toFloat(),
                     jv.obj?.get("disponible")as Boolean,
+                    jv.objString("latitud"),
+                    jv.objString("longitud"),
+                    jv.objString("url"),
+                    jv.objString("url_img"),
                     jv.objInt("marca")
                 )
             } else{
@@ -48,6 +56,10 @@ class ParseModelo{
                     jv.objInt("anio_lanzamiento"),
                     jv.obj?.get("precio").toString().toFloat(),
                     jv.obj?.get("disponible")as Boolean,
+                    jv.objString("latitud"),
+                    jv.objString("longitud"),
+                    jv.objString("url"),
+                    jv.objString("url_img"),
                     Klaxon().parseFromJsonObject<MarcaHTTP>(jv.obj?.get("marca") as JsonObject)
                 )
             }

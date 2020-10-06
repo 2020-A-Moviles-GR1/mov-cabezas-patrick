@@ -40,8 +40,8 @@ class Modelos : AppCompatActivity() {
                 adaptador.notifyDataSetChanged()
                 limpiarCampos()
             }
-
         })
+
         btn_actualizar_m.setOnClickListener({
             var datos = parseModelos(getElementos())
             if(datos != null){
@@ -72,7 +72,11 @@ class Modelos : AppCompatActivity() {
         var precio : Float= txt_precio_m.getText().toString().toFloat()
         var nombre_marca : String = txt_nomre_marca.getText().toString()
         var disponible : Boolean = ch_disponible.isChecked
-        return Modelo(nombre,anio,precio,disponible,nombre_marca)
+        var latitud: String = txt_latitud.getText().toString()
+        var longitud: String = txt_longitud.getText().toString()
+        var url: String = txt_url.getText().toString()
+        var url_img: String = txt_url_img.getText().toString()
+        return Modelo(nombre,anio,precio,disponible,nombre_marca,latitud,longitud,url,url_img)
     }
 
     fun limpiarCampos(){
@@ -80,6 +84,10 @@ class Modelos : AppCompatActivity() {
         txt_anio_m.setText("")
         txt_precio_m.setText("")
         txt_nomre_marca.setText("")
+        txt_latitud.setText("")
+        txt_longitud.setText("")
+        txt_url.setText("")
+        txt_url_img.setText("")
         ch_disponible.setChecked(false)
     }
     fun llenarCampos(modelo:ModeloHTTP):Int{
@@ -87,13 +95,11 @@ class Modelos : AppCompatActivity() {
         txt_anio_m.setText(modelo.anio_lanzamiento.toString())
         txt_precio_m.setText(modelo.precio.toString())
         txt_nomre_marca.setText(modelo.marca.toString())
-//        val con = ConexionMarcas()
-//        val idMarca = con.encuentraMarca(modelo.marca.toString())
-//        if(idMarca != null){
-//            val marca = con.obtenerMarca(idMarca.id)
-//            if (marca != null)
-//                txt_nomre_marca.setText(marca.nombre)
-//        }
+
+        txt_latitud.setText(modelo.latitud)
+        txt_longitud.setText(modelo.longitud)
+        txt_url.setText(modelo.url)
+        txt_url_img.setText(modelo.url_img)
         ch_disponible.setChecked(modelo.disponible)
         return modelo.id
     }
@@ -107,11 +113,15 @@ class Modelos : AppCompatActivity() {
                 "anio_lanzamiento" to modelo.anio_lanzamiento.toString(),
                 "precio" to modelo.precio.toString(),
                 "disponible" to modelo.disponible.toString(),
-                "marca" to idMarca.id.toString()
+                "marca" to idMarca.id.toString(),
+                "latitud" to modelo.latitud.toString(),
+                "longitud" to modelo.longitud.toString(),
+                "url" to modelo.url.toString(),
+                "url_img" to modelo.urlImg.toString()
             )
-            Log.i("dato","no se hay el modelo ${idMarca.id}")
+            Log.i("dato","modelo ${parametrosUsuario}")
         }else{
-            Log.i("dato","no se hay el modelo ${modelo.marca}")
+            Log.i("dato","no exite el modelo ${modelo.marca}")
         }
         return parametrosUsuario
     }

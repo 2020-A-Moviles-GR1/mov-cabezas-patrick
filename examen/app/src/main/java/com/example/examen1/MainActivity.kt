@@ -16,6 +16,9 @@ class MainActivity : AppCompatActivity() {
         btn_modelos.setOnClickListener({
             irModelos()
         })
+        btn_maps.setOnClickListener({
+            irMapas()
+        })
     }
     fun irMarcas(){
         var intentExplicito = Intent(this, Marcas::class.java)
@@ -23,6 +26,10 @@ class MainActivity : AppCompatActivity() {
     }
     fun irModelos(){
         var intentExplicito = Intent(this, Modelos::class.java)
+        this.startActivity(intentExplicito)
+    }
+    fun irMapas(){
+        var intentExplicito = Intent(this, MapsActivity::class.java)
         this.startActivity(intentExplicito)
     }
 }

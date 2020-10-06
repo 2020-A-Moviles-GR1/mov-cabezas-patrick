@@ -25,6 +25,18 @@ module.exports = {
       type:"boolean",
       required: true
     },
+    latitud: {
+      type:"string"
+    },
+    longitud: {
+      type:"string"
+    },
+    url: {
+      type:"string"
+    },
+    url_img: {
+      type:"string"
+    },
     marca: { // Many to One (nombre FK) - mismo nombre q la relacion
       model: 'marca',
       required: true
